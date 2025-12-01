@@ -2,14 +2,34 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
-
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        String str;
+        int x;
+        Sign sign1 = new Sign("ABC222DE", 3);
+        x = sign1.numberOfLines();
+        System.out.println(x);
+        str = sign1.getLines();
+        System.out.println(str);
+        str = sign1.getLines();
+        System.out.println(str);
+        Sign sign2 = new Sign("ABCD", 10);
+        x = sign2.numberOfLines();
+        System.out.println(x);
+        str = sign2.getLines();
+        System.out.println(str);
+        Sign sign3 = new Sign("ABCDEF", 6);
+        x = sign3.numberOfLines();
+        System.out.println(x);
+        str = sign3.getLines();
+        System.out.println(str);
+        Sign sign4 = new Sign("", 4);
+        x = sign4.numberOfLines();
+        System.out.println(x);
+        str = sign4.getLines();
+        System.out.println(str);
+        Sign sign5 = new Sign("AB_CD_EF", 2);
+        x = sign5.numberOfLines();
+        System.out.println(x);
+        str = sign5.getLines();
+        System.out.println(str);
     }
 }
