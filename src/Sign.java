@@ -8,15 +8,21 @@ public class Sign {
     }
 
     public int numberOfLines() {
-        return text.length() % size + 1;
+        int numLines;
+        if (text.isEmpty()) numLines = 0;
+        else if (text.length() <= size) numLines = 1;
+        else if (text.length() % size == 0) numLines = text.length() / size;
+        else numLines = text.length() / size + 1;
+        return numLines;
     }
 
     public String getLines() {
-        int numLines = text.length() % size;
+        int numLines = numberOfLines();
         int startLine = 0;
         int endLine = size;
         String splitString = "";
-        while (numLines > 0) {
+        if (text.isEmpty()) return null;
+        while (numLines > 1) {
             splitString += (text.substring(startLine, endLine) + ";");
             endLine += size;
             startLine += size;
